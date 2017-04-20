@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.alejandrogs.stylemichelle.Main2Activity">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:onClick="imgBlanco"
+        android:id="@+id/image1"
+        android:src="@drawable/blanco"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="80dp"/>
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/image2"
+        android:onClick="imgMorenoClaro"
+        android:src="@drawable/morenoclaro"
+        android:layout_marginTop="80dp"
+        android:layout_toEndOf="@id/image1"/>
+    <ImageView
+        android:layout_width="120dp"
+        android:onClick="imgMoreno"
+        android:layout_height="120dp"
+        android:id="@+id/image3"
+        android:src="@drawable/moreno"
+        android:layout_marginLeft="80dp"
+        android:layout_below="@id/image1"/>
+    <ImageView
+        android:layout_width="120dp"
+        android:onClick="imgMorenoOs"
+        android:layout_height="120dp"
+        android:id="@+id/image4"
+        android:src="@drawable/morenooscuro"
+        android:layout_toEndOf="@+id/image1"
+        android:layout_below="@id/image1"/>
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:fontFamily="cursive"
+        android:text="Selecciona tu tono de piel"
+        android:textAlignment="center"
+        android:textSize="38dp" />
+
+    <TextView
+        android:id="@+id/tono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:layout_below="@+id/image4"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="38dp" />
+    <Button
+
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:id="@+id/btn_continuar"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:theme="@style/MyButton"
+        android:layout_below="@+id/tono"
+        android:text="Continuar"/>
+
+</RelativeLayout>

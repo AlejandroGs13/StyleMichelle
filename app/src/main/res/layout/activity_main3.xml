@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.alejandrogs.stylemichelle.Main3Activity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="26dp"
+        android:fontFamily="cursive"
+        android:textAlignment="center"
+        android:layout_marginTop="22dp"
+        android:id="@+id/tono"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
+        android:text="Que articulos quieres usaras??"
+        android:textSize="32dp"
+        android:textAlignment="center"
+        android:id="@+id/label"
+        android:layout_below="@+id/tono"
+        android:fontFamily="cursive"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label"
+        android:id="@+id/cBlush"
+        android:layout_marginLeft="22dp"
+        android:fontFamily="cursive"
+        android:layout_marginTop="20dp"
+        android:textSize="28dp"
+        android:text="Blush"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cBlush"
+        android:id="@+id/cSombras"
+        android:layout_marginLeft="22dp"
+        android:fontFamily="cursive"
+        android:layout_marginTop="10dp"
+        android:textSize="28dp"
+        android:text="Sobras"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cSombras"
+        android:id="@+id/cLabial"
+        android:layout_marginLeft="22dp"
+        android:fontFamily="cursive"
+        android:layout_marginTop="10dp"
+        android:textSize="28dp"
+        android:text="Labial"/>
+</RelativeLayout>
