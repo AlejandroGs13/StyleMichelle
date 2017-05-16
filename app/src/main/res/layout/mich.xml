@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#E91E63"
+    android:padding="@dimen/widget_margin">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/b1"
+        android:textColor="#fff"
+        android:background="#E91E63"
+        android:layout_height="wrap_content"
+        android:text="Make"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b2"
+        android:background="#E91E63"
+        android:textColor="#fff"
+        android:layout_toEndOf="@+id/b1"
+        android:text="Usuario"/>
+
+
+
+
+
+</RelativeLayout>
