@@ -11,16 +11,16 @@
         android:layout_height="120dp"
         android:onClick="imgBlanco"
         android:id="@+id/image1"
+        android:layout_below="@+id/label"
         android:src="@drawable/blanco"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginLeft="80dp"/>
     <ImageView
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:id="@+id/image2"
         android:onClick="imgMorenoClaro"
         android:src="@drawable/morenoclaro"
-        android:layout_marginTop="80dp"
+        android:layout_below="@+id/label"
         android:layout_toEndOf="@id/image1"/>
     <ImageView
         android:layout_width="120dp"

@@ -47,7 +47,7 @@ public class Main2Activity extends AppCompatActivity {
         seleccion=true;
     }
     public void imgMorenoClaro(View v){
-        tono.setText("Momero Claro");
+        tono.setText("Monero Claro");
         seleccion=true;
     }
     public void imgMorenoOs(View v){
