@@ -18,11 +18,14 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
         tono = (TextView)findViewById(R.id.tono);
         continuar = (Button)findViewById(R.id.btn_continuar);
-        img1 = (ImageView)findViewById(R.id.image1);
+
+        Bundle bundle = getIntent().getExtras();
+        final String usu = bundle.getString("usu");
+        final String con = bundle.getString("con");
         seleccion=false;
+        img1 = (ImageView)findViewById(R.id.image1);
         img2 = (ImageView)findViewById(R.id.image2);
         img3 = (ImageView)findViewById(R.id.image3);
         img4 = (ImageView)findViewById(R.id.image4);
@@ -30,8 +33,10 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (seleccion){
-                    Intent continuar =new Intent(getApplicationContext(),Main3Activity.class);
-                    continuar.putExtra("extra",String.valueOf(tono.getText()));
+                    Intent continuar =new Intent(getApplicationContext(),EyesActivity.class);
+                    continuar.putExtra("piel",String.valueOf(tono.getText()));
+                    continuar.putExtra("usu",usu);
+                    continuar.putExtra("con",con);
                     startActivity(continuar);
                 }
             }

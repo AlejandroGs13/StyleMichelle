@@ -28,6 +28,10 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/mich_info" />
         </receiver>
+
+        <activity android:name=".EyesActivity" />
+        <activity android:name=".DatosActivity" />
+        <activity android:name=".Combinaciones"></activity>
     </application>
 
 </manifest>

@@ -7,14 +7,6 @@
     tools:context="com.example.alejandrogs.stylemichelle.Main3Activity">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="26dp"
-        android:fontFamily="cursive"
-        android:textAlignment="center"
-        android:layout_marginTop="22dp"
-        android:id="@+id/tono"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -59,12 +51,14 @@
         android:text="Labial"/>
 
     <Button
-        android:layout_width="140dp"
-        android:text="Continuar"
-        android:id="@+id/btncon"
+
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:id="@+id/btn_continuar"
         android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/cLabial"/>
+        android:theme="@style/MyButton"
+        android:layout_below="@+id/cLabial"
+        android:text="Ver conbinacines"/>
 
 </RelativeLayout>

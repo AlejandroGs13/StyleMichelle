@@ -2,9 +2,12 @@ package com.example.alejandrogs.stylemichelle;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -20,6 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
     String usucorreo ="correo";
     String usucontraseña ="contraseña";
     String usutono = "tono";
+    String usuojo = "ojo";
     /****************************************************************/
 
     public DBHelper(Context context) {
@@ -29,7 +33,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_NOTES_TABLE = "CREATE TABLE " + nametable + "("
-                + usuid+ " TEXT PRIMARY KEY," + usucorreo + " TEXT"+","+ usucontraseña +" TEXT,"+usutono+" TEXT);";
+                + usuid+ " INTEGER AUTOINCREMENT PRIMARY KEY," + usucorreo + " TEXT"+","+ usucontraseña +" TEXT,"+usutono+" TEXT,"+usuojo+" TEXT);";
         db.execSQL(CREATE_NOTES_TABLE);
     }
 
@@ -43,20 +47,86 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-    public void  addNota(String correo, String contraseña,String tono,View v) {
+    public void  addusu(String correo, String contraseña,String tono,String ojo,View v) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         // Insertar
         try{
             //db.insert(TABLE_NOTAS, null, values);
-            String query = ("INSERT INTO "+nametable+" ("+usucorreo+","+usucontraseña+","+usutono+") VALUES('"+correo+"','"+contraseña+"','"+tono+"');");
+            String query = ("INSERT INTO "+nametable+" ("+usucorreo+","+usucontraseña+","+usutono+","+usuojo+") VALUES('"+correo+"','"+contraseña+"','"+tono+"','"+ojo+"');");
             db.execSQL(query);
         }catch (SQLException ex){
 
-            //Snackbar.make(v, "Error al insertar Titulo ya utilizado", Snackbar.LENGTH_LONG)
-            //    .setAction("Action", null).show();
-            System.out.println(ex);
+
+            Log.e("Error",ex.toString());
         }
         db.close();
     }
+
+    public String getUsuario(String id,View view) {
+        String selectQuery = "SELECT "+usucontraseña+" FROM " + nametable +" WHERE "+usucorreo+" = '"+id+"';";
+        SQLiteDatabase db = this.getWritableDatabase();
+        String note = "";
+        try {
+            Cursor cursor = db.rawQuery(selectQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+
+                    note = cursor.getString(0);
+                } while (cursor.moveToNext());
+            }
+        }catch (SQLiteException ex){
+           Log.e("ERROR",ex.toString());
+
+        }
+        db.close();
+
+        return note;
+    }
+
+    public String getPiel(String id) {
+        String selectQuery = "SELECT "+usutono+" FROM " + nametable +" WHERE "+usucorreo+" = '"+id+"';";
+        SQLiteDatabase db = this.getWritableDatabase();
+        String note = "";
+        try {
+            Cursor cursor = db.rawQuery(selectQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+
+                    note = cursor.getString(0);
+                } while (cursor.moveToNext());
+            }
+        }catch (SQLiteException ex){
+            Log.e("ERROR",ex.toString());
+
+        }
+        db.close();
+
+        return note;
+    }
+
+    public String getOjo(String id) {
+        String selectQuery = "SELECT "+usuojo+" FROM " + nametable +" WHERE "+usucorreo+" = '"+id+"';";
+        SQLiteDatabase db = this.getWritableDatabase();
+        String note = "";
+        try {
+            Cursor cursor = db.rawQuery(selectQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+
+                    note = cursor.getString(0);
+                } while (cursor.moveToNext());
+            }
+        }catch (SQLiteException ex){
+            Log.e("ERROR",ex.toString());
+
+        }
+        db.close();
+
+        return note;
+    }
+
 }

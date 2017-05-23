@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.alejandrogs.stylemichelle.EyesActivity">
+
+
+
+
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:fontFamily="cursive"
+        android:text="Selecciona sus colores de ojo"
+        android:textAlignment="center"
+        android:textSize="28sp" />
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="imgAzul"
+        android:layout_marginTop="20dp"
+        android:id="@+id/image1"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/label"
+        android:src="@drawable/azul"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="imgVerde"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/image2"
+        android:layout_below="@+id/image1"
+        android:src="@drawable/verde"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="90dp"
+        android:onClick="imgCafe"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/image3"
+        android:layout_below="@+id/image2"
+        android:src="@drawable/cafe"/>
+
+    <Button
+
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:id="@+id/btn_continuar"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:theme="@style/MyButton"
+        android:layout_below="@+id/image3"
+        android:text="Continuar"/>
+
+</RelativeLayout>
